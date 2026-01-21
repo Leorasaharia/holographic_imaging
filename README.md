@@ -1,187 +1,128 @@
-#  Radiation-Free Anatomical Inference via AI-Based Holographic Visualization
+# Radiation-Free Anatomical Inference via AI-Based Holographic Visualization
 
-> **A research-oriented proof-of-concept exploring radiation-free anatomical visualization using AI-based inference from external body geometry.**
+*A research-oriented proof-of-concept exploring radiation-free anatomical visualization using AI-based inference from external body geometry.*
+
+⚠️ **This is NOT a diagnostic system.**
+This project is intended strictly for **research visualization and educational exploration**.
 
 ---
 
-## 📌 Overview
+## 🔬 Overview
 
-Conventional medical imaging techniques such as **CT, X-ray, PET, and MRI** rely on radiation, high-cost infrastructure, or limited accessibility.
+Conventional medical imaging (CT, MRI, X-ray, PET) relies on radiation, high-cost infrastructure, or limited accessibility.
 This project explores a **computational alternative**:
-**Can AI infer approximate internal anatomical structure using only non-invasive external body measurements?**
 
-This repository presents a **radiation-free, AI-based anatomical inference framework** that learns a **latent anatomical representation** from external body data and visualizes the output as a **semi-transparent holographic human model**.
+> **Can AI infer an approximate internal anatomical structure using only non-invasive external body measurements?**
 
-⚠️ This system is **not a diagnostic tool** and does **not replace medical imaging**. It is intended strictly for **research visualization and educational exploration**.
-
----
-
-## 🧠 Core Idea
-
-* Learn a mapping from **external body geometry** to an **approximate internal anatomical representation**
-* Use **unsupervised learning** to discover natural anatomical structure
-* Visualize outputs as **holographic, semi-transparent body models**
-* Maintain ethical boundaries by avoiding patient-specific or clinical claims
+The system learns a **latent anatomical representation** from external body geometry and visualizes the result as a **holographic, semi-transparent human model**.
 
 ---
 
-## 🧩 System Architecture
+## 🧠 Core Research Contribution (Primary Focus)
 
-```
-External Body Measurements
-        ↓
-Feature Encoding
-        ↓
-Latent Anatomical Space (AI Model)
-        ↓
-Anatomical Parameter Estimation
-        ↓
-Holographic Visualization (Web Interface)
-```
+The heart of this work lies in the **model training and analysis pipeline**, implemented in:
 
----
+📓 **`Radiation_Free_Anatomical_Inference.ipynb`**
 
-## 📂 Repository Structure
-
-```
-Radiation-Free-Anatomical-Inference/
-│
-├── Radiation_Free_Anatomical_Inference.ipynb   # Backend (Colab / ML pipeline)
-│
-├── frontend/                                   # Web visualization layer
-│   ├── src/                                    # holographic demo
-│   ├── components/                             # Visualization utilities
-│   └── assets/                                 # UI assets (icons, styles)
-│
-├── dataset.md                                  # Dataset description & ethics
-│
-├── README.md                                   # Project documentation
-│
-└── requirements.txt                            # Python dependencies
-```
-
----
-
-## 🧪 Backend: ML & Anatomical Inference
-
-**File:** `Radiation_Free_Anatomical_Inference.ipynb`
-
-### Backend Responsibilities:
+This notebook performs:
 
 * Data preprocessing & normalization
-* Feature extraction from external body measurements
+* Feature encoding from external body measurements
 * Learning a **latent anatomical space** using neural networks
-* Unsupervised clustering of body archetypes
-* Decoding latent representations into anatomical parameters
+* **Unsupervised discovery of anatomical archetypes**
+* Generative decoding for anatomical interpolation
 
-### Techniques Used:
+### Techniques Used
 
-* Autoencoders (PyTorch)
+* Autoencoders (representation learning)
 * PCA for latent space visualization
-* K-Means for anatomical archetype discovery
-* Generative decoding for body interpolation
+* K-Means clustering for body archetype discovery
+* Generative latent-space decoding
 
 ---
 
-## 🌐 Frontend: Holographic Visualization
+## 📊 Learned Latent Anatomy Space
 
-**Directory:** `frontend/`
+### AI-Discovered Human Body Archetypes
 
-### Frontend Capabilities:
+![Human Body Structure Clusters](./assets/body_clusters.png)
 
-* Interactive web-based demo
-* Latent anatomy sliders
-* Real-time holographic silhouette rendering
-* Exploration of AI-discovered body archetypes
+### Continuous Latent Anatomical Manifold
 
-### Visualization Style:
+![Latent Anatomy Space](./assets/latent_space.png)
 
-* Dark, futuristic medical UI
-* Cyan / teal holographic glow
-* Semi-transparent anatomical layers
-* Research-lab aesthetic (non-commercial)
-
-### Technologies:
-
-* Streamlit
-* Plotly (2.5D / 3D visualization)
-* Python-based model inference
+These figures are generated **directly from the training notebook**, demonstrating how the model organizes human anatomy into a structured, interpretable latent space.
 
 ---
 
-## 📊 Dataset
+## 🌐 Holographic Visualization (Secondary Layer)
 
-See **`dataset.md`** for:
+To communicate the research intuitively, a **React + Vite web interface** was developed to visualize model outputs.
 
-* Dataset source
-* Feature descriptions
-* Ethical considerations
-* Limitations
+🔗 **Live Demo:**
+👉 [https://holographic-imaging.vercel.app/](https://holographic-imaging.vercel.app/)
 
-Only **open, non-clinical datasets** are used.
-No personal medical records or patient-specific data are involved.
+### Purpose
+
+* Visualize AI-discovered body archetypes
+* Explore latent anatomy interactively
+* Present research outputs in a holographic form
+
+**Frontend Stack**
+
+* React + Vite
+* Research-focused, non-commercial UI
+* Semi-transparent, holographic visual style
 
 ---
 
-## ⚠️ Ethical Framing & Limitations
+## 📊 Dataset & Ethics
 
-* This project **does NOT perform diagnosis**
-* No disease detection or clinical interpretation
-* Outputs represent **AI-inferred approximations**, not real anatomy
-* Designed as a **computational imaging exploration**
+* Uses **only open, non-clinical datasets**
+* No patient-specific medical records
+* No disease detection or diagnosis
+* Outputs are **AI-inferred approximations**, not real anatomy
+
+See `dataset.md` for full details.
 
 ---
 
 ## 🧠 Research Motivation
 
-This work sits at the intersection of:
+This project sits at the intersection of:
 
 * Biomedical Engineering
-* AI & Computer Vision
 * Computational Imaging
-* Systems-level thinking in healthcare
+* AI Representation Learning
+* Radiation-free healthcare exploration
 
-It is intended as an **early-stage research prototype**, demonstrating how AI may assist future non-invasive visualization methods.
+It demonstrates how **AI can support future non-invasive visualization methods** without making clinical claims.
 
 ---
 
 ## 🚀 Running the Project
 
-### Backend (Colab / Local)
+**Backend (Research Notebook)**
 
 ```bash
 pip install -r requirements.txt
-```
-
-Open and run:
-
-```
+# Open and run:
 Radiation_Free_Anatomical_Inference.ipynb
 ```
 
-### Frontend (Streamlit)
+**Frontend (Visualization)**
 
 ```bash
-cd frontend
-streamlit run app.py
+npm install
+npm run dev
 ```
 
 ---
 
-## 📌 Future Work
-
-* True 3D mesh-based holographic rendering
-* Integration with pose-based surface reconstruction
-* WebGL / Three.js frontend
-* Latent-space morph animations
-* Research paper-style evaluation
-
----
-
-## 🧑‍🔬 Author
+## 👩‍🔬 Author
 
 **Leora Saharia**
-Biomedical Engineering 
-NIT Raipur
+Biomedical Engineering
+National Institute of Technology Raipur
 
 ---
