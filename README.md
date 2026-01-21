@@ -44,12 +44,15 @@ This notebook performs:
 ## 📊 Learned Latent Anatomy Space
 
 ### AI-Discovered Human Body Archetypes
+![Latent Anatomy Space](latent_space.png)
+<img width="618" height="547" alt="image" src="https://github.com/user-attachments/assets/5d2711b4-eeef-4388-a069-2e4779ef398d" />
 
-![Human Body Structure Clusters](./assets/body_clusters.png)
 
 ### Continuous Latent Anatomical Manifold
 
-![Latent Anatomy Space](./assets/latent_space.png)
+![Human Body Structure Clusters](body_clusters.png)
+<img width="625" height="547" alt="image" src="https://github.com/user-attachments/assets/b8b059f5-12d0-479e-b9c2-246bcc99a639" />
+
 
 These figures are generated **directly from the training notebook**, demonstrating how the model organizes human anatomy into a structured, interpretable latent space.
 
