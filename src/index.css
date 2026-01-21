@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Deep cosmic background */
+    --background: 228 40% 4%;
+    --foreground: 190 100% 95%;
+
+    /* Cards with glassmorphism */
+    --card: 220 30% 8%;
+    --card-foreground: 190 100% 95%;
+
+    --popover: 220 30% 8%;
+    --popover-foreground: 190 100% 95%;
+
+    /* Primary cyan/teal holographic */
+    --primary: 187 100% 50%;
+    --primary-foreground: 228 40% 4%;
+
+    /* Secondary deep blue */
+    --secondary: 210 80% 15%;
+    --secondary-foreground: 190 100% 90%;
+
+    /* Muted for subtle elements */
+    --muted: 220 30% 12%;
+    --muted-foreground: 210 30% 60%;
+
+    /* Accent glow */
+    --accent: 175 100% 45%;
+    --accent-foreground: 228 40% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 15%;
+    --ring: 187 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom holographic colors */
+    --holo-cyan: 187 100% 50%;
+    --holo-teal: 175 100% 45%;
+    --holo-blue: 210 100% 60%;
+    --holo-purple: 270 80% 60%;
+    
+    /* Glow effects */
+    --glow-primary: 187 100% 50%;
+    --glow-accent: 175 100% 45%;
+    
+    /* Glass panel */
+    --glass-bg: 220 30% 10%;
+    --glass-border: 187 50% 30%;
+
+    /* Sidebar - space theme */
+    --sidebar-background: 228 40% 6%;
+    --sidebar-foreground: 190 100% 90%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 228 40% 4%;
+    --sidebar-accent: 210 80% 15%;
+    --sidebar-accent-foreground: 190 100% 90%;
+    --sidebar-border: 210 40% 20%;
+    --sidebar-ring: 187 100% 50%;
+  }
+
+  .dark {
+    --background: 228 40% 4%;
+    --foreground: 190 100% 95%;
+    --card: 220 30% 8%;
+    --card-foreground: 190 100% 95%;
+    --popover: 220 30% 8%;
+    --popover-foreground: 190 100% 95%;
+    --primary: 187 100% 50%;
+    --primary-foreground: 228 40% 4%;
+    --secondary: 210 80% 15%;
+    --secondary-foreground: 190 100% 90%;
+    --muted: 220 30% 12%;
+    --muted-foreground: 210 30% 60%;
+    --accent: 175 100% 45%;
+    --accent-foreground: 228 40% 4%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 40% 20%;
+    --input: 210 40% 15%;
+    --ring: 187 100% 50%;
+    --sidebar-background: 228 40% 6%;
+    --sidebar-foreground: 190 100% 90%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 228 40% 4%;
+    --sidebar-accent: 210 80% 15%;
+    --sidebar-accent-foreground: 190 100% 90%;
+    --sidebar-border: 210 40% 20%;
+    --sidebar-ring: 187 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card/40 backdrop-blur-xl border border-primary/20 rounded-lg;
+    box-shadow: 
+      0 0 30px -10px hsl(var(--primary) / 0.3),
+      inset 0 1px 0 0 hsl(var(--primary) / 0.1);
+  }
+
+  .glow-text {
+    text-shadow: 
+      0 0 10px hsl(var(--primary) / 0.8),
+      0 0 20px hsl(var(--primary) / 0.6),
+      0 0 40px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-border {
+    box-shadow: 
+      0 0 15px -3px hsl(var(--primary) / 0.5),
+      0 0 30px -5px hsl(var(--primary) / 0.3);
+  }
+
+  .scan-line {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.1) 45%,
+      hsl(var(--primary) / 0.4) 50%,
+      hsl(var(--primary) / 0.1) 55%,
+      transparent 100%
+    );
+  }
+
+  .holographic-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--holo-cyan) / 0.2) 0%,
+      hsl(var(--holo-teal) / 0.1) 25%,
+      hsl(var(--holo-blue) / 0.15) 50%,
+      hsl(var(--holo-purple) / 0.1) 75%,
+      hsl(var(--holo-cyan) / 0.2) 100%
+    );
+  }
+
+  .grid-overlay {
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+@layer utilities {
+  .text-gradient-holo {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--holo-cyan)) 0%,
+      hsl(var(--holo-teal)) 50%,
+      hsl(var(--holo-blue)) 100%
+    );
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-scan {
+    animation: scan 4s linear infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(30px);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
